@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "pAppServicePlan": {
+            "value": "azbicep-dev-eus-asp1"
+        },
+        "pAppService": {
+            "value": "azbicep-dev-eus-webapp1"
+        },
+        "pAppInsights": {
+            "value": "azbicep-dev-eus-ai"
+        },
+        "pSQLServer": {
+            "value": "azbicep-stg-eus-sqlserver2"
+        },
+        "padministratorLogin": {
+            "value": "sqladmin"
+        },
+        "padministratorLoginPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/f7486dc0-f24c-4d61-b804-f13e544b254b/resourceGroups/azbicep-dev-eus-rg1/providers/Microsoft.KeyVault/vaults/azbicep-dev-eus-kv3"
+                },
+                "secretName": "sqladminpassword"
+            }
+        }
+    }
+}
